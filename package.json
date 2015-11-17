@@ -1,0 +1,17 @@
+{
+  "name": "remoteSqueeze",
+  "version": "1.0.0",
+  "keywords": [
+    "util",
+    "functional",
+    "server",
+    "client",
+    "browser"
+  ],
+  "author": "bonome",
+  "contributors": [],
+  "dependencies": {
+    "q": "^1.4.1",
+    "squeezenode": "0.0.9"
+  }
+}
