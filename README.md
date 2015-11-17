@@ -1,4 +1,5 @@
 remoteSqueeze
+=============
 #### A remote of Logitech Media Server/Squeeze Server
 6 actions are availables via 6 files entries.
 
