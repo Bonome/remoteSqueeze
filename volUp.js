@@ -16,7 +16,8 @@
  */
 
 var player = require('./_player');
+var config = require(__dirname + '/config/config.json');
 
 player.get().then(function (player) {
-    player.setVolume('+5');
+    player.setVolume('+' + config.incVol);
 });
