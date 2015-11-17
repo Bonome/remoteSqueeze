@@ -18,5 +18,5 @@
 var player = require('./_player');
 
 player.get().then(function (player) {
-    player.next();
+    player.setVolume(0);
 });

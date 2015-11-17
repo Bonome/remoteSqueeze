@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-var player = require('./player');
+var player = require('./_player');
 
 player.get().then(function (player) {
     player.getStatus(function (status) {

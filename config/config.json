@@ -1,5 +1,6 @@
 {
     "host": "http://192.168.1.3",
     "port": "9000",
-    "player": "Bureau"
+    "player": "Bureau",
+    "incVol": "5"
 }
