@@ -43,7 +43,6 @@
             });
         }else if (process.argv[keyMethod] === 'playPause') {
             player.getStatus(function (status) {
-                console.log(status);
                 if (status.result.mode === 'pause' || status.result.mode === 'stop') {
                     player.play();
                 } else if (status.result.mode === 'play') {
