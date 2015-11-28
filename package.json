@@ -1,5 +1,5 @@
 {
-  "name": "remoteSqueeze",
+  "name": "remote-squeeze",
   "version": "1.0.0",
   "keywords": [
     "util",
@@ -13,5 +13,20 @@
   "dependencies": {
     "q": "^1.4.1",
     "squeezenode": "0.0.9"
-  }
+  },
+  "description": "remoteSqueeze ============= #### A remote of Logitech Media Server/Squeeze Server 6 actions are availables via 6 files entries.",
+  "main": "playPause.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bonome/remoteSqueeze.git"
+  },
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Bonome/remoteSqueeze/issues"
+  },
+  "homepage": "https://github.com/Bonome/remoteSqueeze#readme"
 }

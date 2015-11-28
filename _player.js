@@ -29,29 +29,6 @@ var squeeze = new SqueezeServer(config.host, config.port);
 
 module.exports.config = config;
 
-/**
- * return the player instance of a player name or null if it's not exist
- * 
- * @param {String} name
- * @return promise
- */
-function playerIdByName(name) {
-    var deferred = q.defer();
-    var found = false;
-    squeeze.getPlayers(function (reply) {
-        for (var id in reply.result) {
-            if (reply.result[id].name === name) {
-                found = true;
-                deferred.resolve(squeeze.players[reply.result[id].playerid]);
-            }
-        }
-        if (!found) {
-            deferred.reject(null);
-        }
-    });
-    return deferred.promise;
-}
-;
 module.exports.squeeze = squeeze;
 
 module.exports.get = function (playerName) {
@@ -62,12 +39,18 @@ module.exports.get = function (playerName) {
     squeeze.on('register', function () {
         squeeze.getPlayers(function (reply) {
             if (reply.ok) {
-                playerIdByName(playerName).then(function (player) {
-                    deferred.resolve(player);
-                }).catch(function () {
-                    console.log('Error occured! Specified player does not exist'.red);
-                    deferred.reject('Error occured! Specified player does not exist');
-                });
+                var found = false;
+                for (var id in reply.result) {
+                    if (reply.result[id].name === playerName) {
+                        found = true;
+                        deferred.resolve(squeeze.players[reply.result[id].playerid]);
+                    }
+                }
+                if (!found) {
+                    deferred.reject('Error occured! Specified player : ' + playerName + ' does not exist');
+                }
+            } else {
+                deferred.reject('Error occured! Server not found !');
             }
         });
     });
